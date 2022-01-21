@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buton_a">GO A</string>
+    <string name="buton_x">GO X</string>
+</resources>
