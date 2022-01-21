@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="arama">Ürün veya Kategori Arayın</string>
+    <string name="hediye_arilari">Hediye Arıları</string>
+    <string name="karaca">Karaca</string>
+    <string name="defacto">DeFacto</string>
+    <string name="koton">Koton</string>
+    <string name="avon">Avon</string>
+    <string name="ayakkabi_polo">Ayakkabı</string>
+    <string name="saat_and_saat"><![CDATA[Saat & Saat]]></string>
+    <string name="anasayfa">Anasayfa</string>
+    <string name="kategoriler">Kategoriler</string>
+    <string name="favorilerim">Favorilerim</string>
+    <string name="sepetim">Sepetim</string>
+    <string name="hesabim">Hesabım</string>
+</resources>
