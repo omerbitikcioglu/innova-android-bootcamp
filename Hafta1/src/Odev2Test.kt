@@ -57,7 +57,7 @@ fun main() {
     //Soru6 test
     println("Soru 6 test...")
     try {
-        val gunSayisi = 30
+        val gunSayisi = 1
         val maas = odev2.soru6(gunSayisi)
         println("$gunSayisi gün calışan birisi $maas TL maaş almalı")
     } catch (e: IllegalArgumentException) {
