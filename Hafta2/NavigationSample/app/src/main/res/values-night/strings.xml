@@ -2,4 +2,11 @@
 <resources>
     <string name="buton_a">GO A</string>
     <string name="buton_x">GO X</string>
+    <string name="sayfa_a">SAYFA A</string>
+    <string name="go_b">GO B</string>
+    <string name="sayfa_b">SAYFA B</string>
+    <string name="go_y">GO Y</string>
+    <string name="sayfa_x">SAYFA X</string>
+    <string name="sayfa_y">SAYFA Y</string>
+    <string name="go_back_text">GERİ TUŞU İLE\nDİREKT\nANASAYFAYA\nDÖNECEK</string>
 </resources>
