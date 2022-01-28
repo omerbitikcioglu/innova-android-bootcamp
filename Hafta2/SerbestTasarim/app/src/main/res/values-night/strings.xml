@@ -8,9 +8,19 @@
     <string name="avon">Avon</string>
     <string name="ayakkabi_polo">Ayakkabı</string>
     <string name="saat_and_saat"><![CDATA[Saat & Saat]]></string>
+    <string name="kis_firsatlari">Kış fırsatları</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="anasayfa">Anasayfa</string>
     <string name="kategoriler">Kategoriler</string>
     <string name="favorilerim">Favorilerim</string>
     <string name="sepetim">Sepetim</string>
     <string name="hesabim">Hesabım</string>
+    <string name="cicek">Çiçek</string>
+    <string name="kuponlar">Kuponlar</string>
+    <string name="firsatlar">Günün\nFırsatları</string>
+    <string name="cuzdan">Cüzdan</string>
+    <string name="video_msg">Ünlülerden\nVideo\nMesaj</string>
+    <string name="cicekAranjmanlari">Çiçek Aranjmanları</string>
+    <string name="yenilebilir_cicekler">Yenilebilir Çiçekler</string>
+    <string name="gezer">Gezer Terlik</string>
 </resources>
