@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="where_to_ship">Nereye Göndereceksiniz?</string>
+    <string name="filter">Filtrele</string>
+    <string name="fast_delivery">Her Gün Aynı Gün / Ücretsiz Teslimat</string>
+    <string name="similar">Benzer</string>
+    <string name="flower_image_description">Flower Image</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RecyclerViewTest</string>
+    <string name="where_to_ship">Nereye Göndereceksiniz?</string>
+    <string name="filter">Filtrele</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fast_delivery">Her Gün Aynı Gün / Ücretsiz Teslimat</string>
+    <string name="similar">Benzer</string>
+    <string name="flower_image_description">Flower Image</string>
+</resources>

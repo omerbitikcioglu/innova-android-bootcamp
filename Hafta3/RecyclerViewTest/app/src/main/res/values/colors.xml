@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- CicekSepeti Colors -->
+    <color name="mineral_green">#3b5146</color>
+    <color name="gray_nurse">#e9eae9</color>
+    <color name="mantle">#90a398</color>
+    <color name="limed_oak">#a5964e</color>
+    <color name="powder_ash">#bac6c1</color>
+    <color name="au_chico">#9e5d5b</color>
+    <color name="fern">#5fb176</color>
+    <color name="heathered_gray">#bebd98</color>
+    <color name="quicksand">#be9999</color>
+    <color name="chambray">#2f5b89</color>
+
+
+</resources>
