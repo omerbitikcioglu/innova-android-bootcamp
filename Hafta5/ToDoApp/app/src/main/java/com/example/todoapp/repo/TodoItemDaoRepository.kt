@@ -1,48 +1,58 @@
 package com.example.todoapp.repo
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.todoapp.entity.TodoItem
+import com.example.todoapp.room.TodoDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class TodoItemDaoRepository {
+class TodoItemDaoRepository(var application: Application) {
     var todoItems: MutableLiveData<List<TodoItem>>
+    var db: TodoDatabase
 
     init {
         todoItems = MutableLiveData()
+        db = TodoDatabase.databaseAccess(application)!!
     }
 
     fun getTodoItemList() : MutableLiveData<List<TodoItem>> {
         return todoItems
     }
 
-    fun saveNewTodoItem(todoText: String) {
-        Log.e("Save Todo Text", todoText)
+    fun addNewTodoItem(todoText: String) {
+        val job = CoroutineScope(Dispatchers.Main).launch {
+            val newTodoItem = TodoItem(0, todoText)
+            db.todoItemDao().addTodo(newTodoItem)
+        }
     }
 
     fun updateTodoItem(todoId: Int, todoText: String) {
-        Log.e("Update Todo Item", "$todoId - $todoText")
+        val job = CoroutineScope(Dispatchers.Main).launch {
+            val updatedTodoItem = TodoItem(todoId, todoText)
+            db.todoItemDao().updateTodo(updatedTodoItem)
+        }
     }
 
     fun searchTodoItem(searchText: String) {
-        Log.e("Search Item", searchText)
+        val job = CoroutineScope(Dispatchers.Main).launch {
+            todoItems.value = db.todoItemDao().searchItem(searchText)
+        }
     }
 
     fun deleteTodoItem(todoId: Int) {
-        Log.e("Delete item", todoId.toString())
+        val job = CoroutineScope(Dispatchers.Main).launch {
+            val removedTodoItem = TodoItem(todoId, "")
+            db.todoItemDao().deleteItem(removedTodoItem)
+            fetchAllTodoItems()
+        }
     }
 
-    fun fetchTodoItems() {
-        val items = ArrayList<TodoItem>()
-        val todo1 = TodoItem(1, "Ekmek al")
-        val todo2 = TodoItem(2, "Çöpü boşalt")
-        val todo3 = TodoItem(3, "Köpeği gezdir")
-        val todo4 = TodoItem(4, "Ödevi yap")
-        val todo5 = TodoItem(5, "Kitap oku")
-        items.add(todo1)
-        items.add(todo2)
-        items.add(todo3)
-        items.add(todo4)
-        items.add(todo5)
-        todoItems.value = items
+    fun fetchAllTodoItems() {
+        val job = CoroutineScope(Dispatchers.Main).launch {
+            todoItems.value = db.todoItemDao().allItems()
+        }
     }
 }

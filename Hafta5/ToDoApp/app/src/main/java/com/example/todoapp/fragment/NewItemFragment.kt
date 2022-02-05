@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.example.todoapp.R
 import com.example.todoapp.databinding.FragmentNewItemBinding
 import com.example.todoapp.viewmodel.NewItemFragmentViewModel
+import com.example.todoapp.viewmodel.NewItemVMF
 
 class NewItemFragment : Fragment() {
     private lateinit var binding: FragmentNewItemBinding
@@ -24,7 +25,9 @@ class NewItemFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val tempViewModel: NewItemFragmentViewModel by viewModels()
+        val tempViewModel: NewItemFragmentViewModel by viewModels() {
+            NewItemVMF(requireActivity().application)
+        }
         viewModel = tempViewModel
     }
 

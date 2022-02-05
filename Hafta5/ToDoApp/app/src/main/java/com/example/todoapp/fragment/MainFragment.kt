@@ -15,6 +15,7 @@ import com.example.todoapp.adapter.TodoItemAdapter
 import com.example.todoapp.databinding.FragmentMainBinding
 import com.example.todoapp.entity.TodoItem
 import com.example.todoapp.viewmodel.MainFragmentViewModel
+import com.example.todoapp.viewmodel.MainVMF
 
 class MainFragment : Fragment(), SearchView.OnQueryTextListener {
     private lateinit var binding: FragmentMainBinding
@@ -42,7 +43,9 @@ class MainFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        val tempViewModel: MainFragmentViewModel by viewModels()
+        val tempViewModel: MainFragmentViewModel by viewModels() {
+            MainVMF(requireActivity().application)
+        }
         viewModel = tempViewModel
     }
 
@@ -64,5 +67,10 @@ class MainFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onQueryTextChange(newText: String): Boolean {
         viewModel.search(newText)
         return true
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadTodoItems()
     }
 }

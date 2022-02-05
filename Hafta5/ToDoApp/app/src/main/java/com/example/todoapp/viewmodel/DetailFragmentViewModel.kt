@@ -1,11 +1,11 @@
 package com.example.todoapp.viewmodel
 
-import android.util.Log
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import com.example.todoapp.repo.TodoItemDaoRepository
 
-class DetailFragmentViewModel : ViewModel() {
-    val trepo = TodoItemDaoRepository()
+class DetailFragmentViewModel(application: Application) : AndroidViewModel(application) {
+    val trepo = TodoItemDaoRepository(application)
 
     fun update(todoId: Int, todoText: String) {
         trepo.updateTodoItem(todoId, todoText)

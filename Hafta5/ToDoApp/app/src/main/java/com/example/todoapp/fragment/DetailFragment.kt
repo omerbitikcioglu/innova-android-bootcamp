@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.todoapp.R
 import com.example.todoapp.databinding.FragmentDetailBinding
 import com.example.todoapp.viewmodel.DetailFragmentViewModel
+import com.example.todoapp.viewmodel.DetailVMF
 
 class DetailFragment : Fragment() {
     private lateinit var binding: FragmentDetailBinding
@@ -30,7 +31,9 @@ class DetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val tempViewModel: DetailFragmentViewModel by viewModels()
+        val tempViewModel: DetailFragmentViewModel by viewModels() {
+            DetailVMF(requireActivity().application)
+        }
         viewModel = tempViewModel
     }
 

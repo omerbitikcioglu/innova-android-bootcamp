@@ -47,9 +47,9 @@ class TodoItemAdapter(
         }
 
         d.imageViewDelete.setOnClickListener {
-            Snackbar.make(it, "${todoItem.todoId}. öğe silinsin mi?", Snackbar.LENGTH_SHORT)
+            Snackbar.make(it, "Öğe silinsin mi?", Snackbar.LENGTH_SHORT)
                 .setAction("Evet") {
-                    Log.e("Delete item", todoItem.todoId.toString())
+                    viewModel.delete(todoItem.todoId)
                 }.show()
         }
     }

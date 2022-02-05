@@ -1,13 +1,14 @@
 package com.example.todoapp.viewmodel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.todoapp.entity.TodoItem
 import com.example.todoapp.repo.TodoItemDaoRepository
 
-class MainFragmentViewModel : ViewModel() {
+class MainFragmentViewModel(application: Application) : AndroidViewModel(application) {
     var todoItems = MutableLiveData<List<TodoItem>>()
-    val trepo = TodoItemDaoRepository()
+    val trepo = TodoItemDaoRepository(application)
 
     init {
         loadTodoItems()
@@ -23,6 +24,6 @@ class MainFragmentViewModel : ViewModel() {
     }
 
     fun loadTodoItems() {
-        trepo.fetchTodoItems()
+        trepo.fetchAllTodoItems()
     }
 }
