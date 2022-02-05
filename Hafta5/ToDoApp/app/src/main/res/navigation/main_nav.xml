@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/anasayfaFragment"
-        android:name="com.example.todoapp.fragment.AnasayfaFragment"
+        android:name="com.example.todoapp.fragment.MainFragment"
         android:label="fragment_anasayfa"
-        tools:layout="@layout/fragment_anasayfa" >
+        tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_anasayfaFragment_to_kayitFragment"
             app:destination="@id/kayitFragment" />
@@ -19,14 +19,14 @@
     </fragment>
     <fragment
         android:id="@+id/kayitFragment"
-        android:name="com.example.todoapp.fragment.KayitFragment"
+        android:name="com.example.todoapp.fragment.NewItemFragment"
         android:label="fragment_kayit"
-        tools:layout="@layout/fragment_kayit" />
+        tools:layout="@layout/fragment_new_item" />
     <fragment
         android:id="@+id/detayFragment"
-        android:name="com.example.todoapp.fragment.DetayFragment"
+        android:name="com.example.todoapp.fragment.DetailFragment"
         android:label="fragment_detay"
-        tools:layout="@layout/fragment_detay" >
+        tools:layout="@layout/fragment_detail" >
         <argument
             android:name="todoItem"
             app:argType="com.example.todoapp.entity.TodoItem" />

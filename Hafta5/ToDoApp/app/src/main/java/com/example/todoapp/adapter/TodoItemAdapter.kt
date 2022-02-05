@@ -3,49 +3,50 @@ package com.example.todoapp.adapter
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todoapp.R
+import com.example.todoapp.databinding.TodoItemDesignBinding
 import com.example.todoapp.entity.TodoItem
-import com.example.todoapp.fragment.AnasayfaFragmentDirections
+import com.example.todoapp.fragment.MainFragmentDirections
+import com.example.todoapp.viewmodel.MainFragmentViewModel
 import com.google.android.material.snackbar.Snackbar
 
-class TodoItemAdapter(var mContext: Context, var todoList: List<TodoItem>) :
+class TodoItemAdapter(
+    var mContext: Context,
+    var todoList: List<TodoItem>,
+    var viewModel: MainFragmentViewModel
+) :
     RecyclerView.Adapter<TodoItemAdapter.TodoItemHolder>() {
 
-    inner class TodoItemHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var card_todo_item: CardView
-        var textViewTodoText: TextView
-        var imageViewDelete: ImageView
+    inner class TodoItemHolder(todoItemDesignBinding: TodoItemDesignBinding) :
+        RecyclerView.ViewHolder(todoItemDesignBinding.root) {
+        val todoItemDesignBinding: TodoItemDesignBinding
 
         init {
-            card_todo_item = view.findViewById(R.id.card_todo_item)
-            textViewTodoText = view.findViewById(R.id.textViewTodoItem)
-            imageViewDelete = view.findViewById(R.id.imageViewDelete)
+            this.todoItemDesignBinding = todoItemDesignBinding
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoItemHolder {
-        val design = LayoutInflater.from(mContext).inflate(R.layout.todo_item, parent,false)
+        val layoutInflater = LayoutInflater.from(mContext)
+        val design = TodoItemDesignBinding.inflate(layoutInflater, parent, false)
         return TodoItemHolder(design)
     }
 
     override fun onBindViewHolder(holder: TodoItemHolder, position: Int) {
         val todoItem = todoList.get(position)
+        val d = holder.todoItemDesignBinding
+        d.todoItem = todoItem
 
-        holder.textViewTodoText.setText(todoItem.todoText)
+        d.textViewTodoItem.setText(todoItem.todoText)
 
-        holder.card_todo_item.setOnClickListener {
-            val nav = AnasayfaFragmentDirections.actionAnasayfaFragmentToDetayFragment(todoItem)
+        d.cardTodoItem.setOnClickListener {
+            val nav = MainFragmentDirections.actionAnasayfaFragmentToDetayFragment(todoItem)
             Navigation.findNavController(it).navigate(nav)
         }
 
-        holder.imageViewDelete.setOnClickListener {
+        d.imageViewDelete.setOnClickListener {
             Snackbar.make(it, "${todoItem.todoId}. öğe silinsin mi?", Snackbar.LENGTH_SHORT)
                 .setAction("Evet") {
                     Log.e("Delete item", todoItem.todoId.toString())

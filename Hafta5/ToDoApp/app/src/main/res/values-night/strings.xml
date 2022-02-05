@@ -12,4 +12,5 @@
     <string name="title_new_item">Yapılacak İş Kayıt</string>
     <string name="title_detail">Yapılacak İş Detay</string>
     <string name="search">Ara</string>
+    <string name="add_new_item">Add new item</string>
 </resources>
