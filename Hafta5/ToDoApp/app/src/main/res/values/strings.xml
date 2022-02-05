@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ToDoApp</string>
+    <string name="text_todo">Yapılacak İş</string>
+
+    <!-- Button Texts -->
+    <string name="button_update_text">Güncelle</string>
+    <string name="button_save_text">Kaydet</string>
+
+    <!-- Toolbar Titles -->
+    <string name="title_main">Yapılacaklar</string>
+    <string name="title_new_item">Yapılacak İş Kayıt</string>
+    <string name="title_detail">Yapılacak İş Detay</string>
+    <string name="search">Ara</string>
+    <string name="add_new_item">Add new item</string>
+</resources>
